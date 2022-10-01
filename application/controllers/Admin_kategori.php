@@ -7,7 +7,7 @@ class Admin_kategori extends CI_Controller{
         $this->load->model('Kategori_model');
         $this->load->library('pagination');
     }
-
+    
     public function index(){
         $data['title'] = "Admin Lapak Tani | Kategori";
         $config['base_url'] = "http://localhost/lapaktani/Admin_kategori/index";

@@ -128,6 +128,14 @@
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
+                <li class="nav-item  <?= active_menu('Admin_user'); ?> ">
+                    <a href="<?= base_url(); ?>Admin_user" class="nav-link">
+                        <span class="sidebar-icon">
+                        <i class="fa-solid fa-fw fa-user fs-5"></i>
+                        </span>
+                        <span class="sidebar-text">User</span>
+                    </a>
+                </li>
                 <li class="nav-item <?= active_menu('Admin_penjualan'); ?><?= active_menu('Admin_kategori'); ?>">
                     <span class="nav-link  collapsed  d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu-app">
                         <span>

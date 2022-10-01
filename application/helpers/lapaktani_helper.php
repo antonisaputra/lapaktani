@@ -18,3 +18,17 @@ function viewAdmin($folder,$halaman, $data)
     $ci->load->view('admin/'.$folder.'/'.$halaman, $data);
     $ci->load->view('admin/tamplates/footer', $data);
 }
+
+function viewAuth($halaman, $data)
+{
+    $ci = get_instance();
+    $ci->load->view('auth/'.$halaman, $data);
+}
+
+function queryUser($assoc){
+    $ci = get_instance();
+    
+    $user = $ci->db->get_where('user',['email' => $ci->session->userdata('email')])->row_array();
+
+    return $user[$assoc];
+}
