@@ -21,20 +21,13 @@
     }    
     ?>
 
-<a href="<?= base_url();?>Admin_kategori/tambahKategori" class="btn mt-3 btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle">
+<a href="<?= base_url();?>Admin_kategori/tambahKategori" class="btn mt-3 mb-3 btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle">
     <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
     </svg>
     Tambah Kategori
 </a>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-    <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group ms-lg-3">
-            <a href="<?= base_url(); ?>Admin_kategori/pdf" class="btn btn-sm btn-outline-gray-600" target="_blank">Print atau Export Pdf</a>
-        </div>
-    </div>
-</div>
 <div class="card card-body border-0 shadow table-wrapper table-responsive">
     <table class="table table-hover">
         <thead>

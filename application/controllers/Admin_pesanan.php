@@ -50,7 +50,7 @@ class Admin_pesanan extends CI_Controller
         $this->db->from('detail_pesanan');
 
         $config['total_rows'] = $this->db->count_all_results();
-        $config['per_page'] = 2;
+        $config['per_page'] = 20;
 
         $this->pagination->initialize($config);
         $data['start'] = $this->uri->segment(3);
@@ -108,5 +108,11 @@ class Admin_pesanan extends CI_Controller
         $data['title'] = "Admin Lapak Tani | Detail Penjualan";
         $data['pesanan'] = $this->db->get_where('detail_pesanan', ['id' => $id])->row_array();
         viewAdmin('Pesanan', 'detail', $data);
+    }
+
+    public function print(){
+        $data['title'] = "Print Data Pesanan";
+        $data['pesanan'] = $this->db->get('detail_pesanan')->result_array();
+        $this->load->view('admin/Pesanan/print', $data);
     }
 }

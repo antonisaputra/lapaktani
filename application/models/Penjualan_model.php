@@ -59,4 +59,11 @@ class Penjualan_model extends CI_Model
             $this->db->update('penjualan', $data);
         }
     }
+
+    public function cariDataPenjualan(){
+        $keyword = $this->input->post('keyword_penjualan');
+
+        $this->db->like('nama_produk', $keyword);
+        return $this->db->get('detail_penjualan')->result_array();
+    }
 }

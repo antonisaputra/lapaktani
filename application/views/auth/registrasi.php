@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
     <link rel="icon" href="<?= base_url(); ?>assets/user/img/TONI.png">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/user/css/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/user/css/style1.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/user/bootstrap/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -43,7 +43,7 @@ class Admin_user extends CI_Controller{
         $this->db->like('username', $data['keyword']);
         $this->db->from('user');
         $config['total_rows'] = $this->db->count_all_results();
-        $config['per_page'] = 2;
+        $config['per_page'] = 20;
 
         $this->pagination->initialize($config);
         $data['start'] = $this->uri->segment(3);

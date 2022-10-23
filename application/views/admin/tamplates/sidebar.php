@@ -59,7 +59,7 @@
     <link type="text/css" href="<?= base_url(); ?>assets/assetsadmin/vendor/notyf/notyf.min.css" rel="stylesheet">
 
     <!-- Volt CSS -->
-    <link type="text/css" href="<?= base_url(); ?>assets/assetsadmin/css/volt.css" rel="stylesheet">
+    <link type="text/css" href="<?= base_url(); ?>assets/assetsadmin/css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -177,7 +177,23 @@
                             </li>
                         </ul>
                     </div>
-                </li>   
+                </li>
+                <li class="nav-item  <?= active_menu('Admin_keranjang'); ?> ">
+                    <a href="<?= base_url(); ?>Admin_keranjang" class="nav-link">
+                        <span class="sidebar-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <span class="sidebar-text">Keranjang</span>
+                    </a>
+                </li>
+                <li class="nav-item  <?= active_menu('Admin_transaksi'); ?> ">
+                    <a href="<?= base_url(); ?>Admin_transaksi" class="nav-link">
+                        <span class="sidebar-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                        </span>
+                        <span class="sidebar-text">Transaksi</span>
+                    </a>
+                </li> 
             </ul>
         </div>
     </nav>

@@ -45,7 +45,7 @@ class Admin_penjualan extends CI_Controller{
         $this->db->from('detail_penjualan');
         
         $config['total_rows'] = $this->db->count_all_results();
-        $config['per_page'] = 2;
+        $config['per_page'] = 20;
 
         $this->pagination->initialize($config);
         $data['start'] = $this->uri->segment(3);
@@ -101,13 +101,19 @@ class Admin_penjualan extends CI_Controller{
         $this->db->delete('penjualan');
         redirect('Admin_penjualan');
     }
-    public function pdf(){
-        $data['title'] = "Data Penjualan";
-        $date = date('d M Y H:i:s');
-        $mpdf = new \Mpdf\Mpdf();
-        $data['penjualan']= $this->Penjualan_model->getAllPenjualan();
-        $pdfView = $this->load->view('Admin/Penjualan/pdf',$data, TRUE);
-        $mpdf->WriteHTML($pdfView);
-        $mpdf->Output('Daftar Penjualan'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
+    // public function pdf(){
+    //     $data['title'] = "Data Penjualan";
+    //     $date = date('d M Y H:i:s');
+    //     $mpdf = new \Mpdf\Mpdf();
+    //     $data['penjualan']= $this->Penjualan_model->getAllPenjualan();
+    //     $pdfView = $this->load->view('Admin/Penjualan/pdf',$data, TRUE);
+    //     $mpdf->WriteHTML($pdfView);
+    //     $mpdf->Output('Daftar Penjualan'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
+    // }
+
+    public function print(){
+        $data['title'] = "Print Penjualan";
+        $data['penjualan'] =$this->db->get('detail_penjualan')->result_array();
+        $this->load->view('admin/Penjualan/print', $data);
     }
 }

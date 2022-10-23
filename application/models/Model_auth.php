@@ -10,7 +10,7 @@ class Model_auth extends CI_Model{
             'email' => $this->input->post('email', true),
             'no_hp' => $this->input->post('no_hp', true),
             'alamat' => $this->input->post('alamat_lengkap', true),
-            'profil' => "default.jpg",
+            'profil' => "default.png",
             'role' => "user",
         ];
 

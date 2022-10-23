@@ -17,7 +17,7 @@
                     <div class="col-12 col-xl-7 px-xl-0">
                         <div class="d-none d-sm-block">
                             <h2 class="h6 text-gray-400 mb-0">Jumalah User</h2>
-                            <h3 class="fw-extrabold mb-2">4</h3>
+                            <h3 class="fw-extrabold mb-2"><?= $num_user; ?></h3>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="d-sm-none">
                             <h2 class="h5">Transaksi</h2>
-                            <h3 class="fw-extrabold mb-1">3</h3>
+                            <h3 class="fw-extrabold mb-1"><?= $num_transaksi; ?></h3>
                         </div>
                     </div>
                     <div class="col-12 col-xl-7 px-xl-0">

@@ -24,7 +24,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group ms-2 ms-lg-3">
-      <a href="<?= base_url(); ?>Admin_penjualan/pdf" class="btn btn-sm btn-outline-gray-600" target="_blank">Print Atau Export PDF</a>
+      <a href="<?= base_url(); ?>Admin_pesanan/print" class="btn btn-sm btn-outline-gray-600" target="_blank">Print</a>
     </div>
   </div>
 </div>

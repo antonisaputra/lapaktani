@@ -46,7 +46,7 @@ class Admin_kategori extends CI_Controller{
         $this->db->from('kategori');
         
         $config['total_rows'] = $this->db->count_all_results();
-        $config['per_page'] = 2;
+        $config['per_page'] = 20;
 
         $this->pagination->initialize($config);
         $data['start'] = $this->uri->segment(3);
@@ -94,13 +94,13 @@ class Admin_kategori extends CI_Controller{
         redirect('Admin_kategori');
     }
 
-    public function pdf(){
-        $data['title'] = "Data Kategori";
-        $date = date('d M Y H:i:s');
-        $mpdf = new \Mpdf\Mpdf();
-        $data['kategori']= $this->Kategori_model->getAllKategori();
-        $pdfView = $this->load->view('Admin/Kategori/pdf',$data, TRUE);
-        $mpdf->WriteHTML($pdfView);
-        $mpdf->Output('Daftar Kategori'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
-    }
+    // public function pdf(){
+    //     $data['title'] = "Data Kategori";
+    //     $date = date('d M Y H:i:s');
+    //     $mpdf = new \Mpdf\Mpdf();
+    //     $data['kategori']= $this->Kategori_model->getAllKategori();
+    //     $pdfView = $this->load->view('Admin/Kategori/pdf',$data, TRUE);
+    //     $mpdf->WriteHTML($pdfView);
+    //     $mpdf->Output('Daftar Kategori'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
+    // }
 }

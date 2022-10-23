@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
     <link rel="icon" href="<?= base_url(); ?>assets/user/img/TONI.png">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/user/css/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/user/css/style1.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/user/bootstrap/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
                     <form action="" method="POST">
                         <div class="row mb-3">
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="email" placeholder="Email">
+                                <input type="text" class="form-control" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
                                 <?= form_error('email', '<small class="form-text ms-3 text-muted text-danger">', '</small>') ?>
                             </div>
                             <div class="col-sm-10 mt-3">
@@ -56,8 +56,8 @@
             </div>
         </div>
     </div>
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="<?= base_url(); ?>assets/user/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/sweetalert2.all.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/cobajs1.js"></script>
 </body>
