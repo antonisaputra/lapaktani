@@ -1,9 +1,9 @@
 <div class="container-fluid">
     <div class="card mb-3">
         <div class="card-body">
-            <h5 class="card-title">Transaksi <?= $transaksi['username']; ?></h5>
-            <p class="card-text">Waktu : <span><?= $transaksi['tanggal_transaksi']; ?></span></p>
-            <p class="card-text">Email : <span><?= $transaksi['email']; ?></span></p>
+            <h5 class="card-title">Transaksi <?= $user['username']; ?></h5>
+            <p class="card-text">Waktu : <span><?= date('d F Y h:i:s A', strtotime($transaksi['tanggal_transaksi'])); ?></span></p>
+            <p class="card-text">Email : <span><?= $user['email']; ?></span></p>
             <p class="card-text">Alamat : <span><?= $transaksi['alamat']; ?></span></p>
             <table class="table text-center table-hover table-striped">
                         <thead class="table-info">
@@ -42,7 +42,7 @@
             <p class="card-text">Total Belanjaan : <span><?= 'Rp.' . number_format(($transaksi['ongkir'] + $total), 2, ",", "."); ?></span></p>
             <p class="card-text">Kurir : <span><?= $transaksi['kurir']; ?></span></p>
             <p class="card-text">No Rekening : <span><?= $transaksi['no_rek']; ?></span></p>
-            <p class="card-text">Metode Pembayaran : <span><?= $transaksi['metode_pembayaran']; ?></span></p>
+            <p class="card-text">Metode Pembayaran : <span><?= $pembayaran['metode_pembayaran']; ?></span></p>
             <p class="card-text">Catatan Pembelian : <span><?= $transaksi['catatan_pembelian']; ?></span></p>
         </div>
 

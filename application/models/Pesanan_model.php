@@ -57,4 +57,29 @@ class Pesanan_model extends CI_Model{
             $this->db->update('pesanan', $data);
         }
     }
+
+    public function upload_pembayaran($idKeranjang){
+        $config['upload_path'] = FCPATH . '/assets/upload/';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('bukti_pembayaran')) {
+            redirect('Pesanan/transaksi_pesanan');
+        } else {
+            $gambar = $this->upload->data('file_name');
+
+            $data = [
+                'id_keranjang' => $idKeranjang,
+                'bukti_pembayaran' => $gambar,
+                'bukti_barang_sampai' => ''
+            ];
+
+            $this->db->insert('bukti_pembayaran', $data);
+
+            $this->db->where('id',$idKeranjang);
+            $this->db->update('keranjang',['status_barang' => 'Pembayaran Berhasil']);
+        }
+    }
+
 }

@@ -6,6 +6,7 @@ class Admin_penjualan extends CI_Controller{
         parent::__construct();
         $this->load->model('Penjualan_model');
         $this->load->library('pagination');
+        is_admin();
     }
     public function index(){
         $data['title'] = "Admin Lapak Tani | Penjualan Produk";
@@ -97,6 +98,8 @@ class Admin_penjualan extends CI_Controller{
     }
 
     public function hapus($id){
+        $penjualan = $this->db->get_where('penjualan',['id' => $id])->result_array();
+        unlink(FCPATH.'assets/upload/'.$penjualan['gambar']);
         $this->db->where('id',$id);
         $this->db->delete('penjualan');
         redirect('Admin_penjualan');

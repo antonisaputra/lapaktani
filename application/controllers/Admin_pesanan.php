@@ -8,6 +8,7 @@ class Admin_pesanan extends CI_Controller
         parent::__construct();
         $this->load->model('Pesanan_model');
         $this->load->library('Pagination');
+        is_admin();
     }
 
     public function index()

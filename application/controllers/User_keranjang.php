@@ -5,6 +5,7 @@ class User_keranjang extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Keranjang_model');
+        is_user();
     }
     public function index(){
         $data['title'] = "Keranjang";
@@ -15,6 +16,7 @@ class User_keranjang extends CI_Controller{
     public function checkout(){
         $data['title'] = "Checkout";
         $data['kurir'] = $this->db->get('kurir')->result_array();
+        $data['pembayaran'] = $this->db->get('pembayaran')->result_array();
         // $this->form_validation->set_rules('alamat','Alamat','required|trim');
         $this->form_validation->set_rules('bank','Bank','required');
         $this->form_validation->set_rules('kurir','Kurir','required');

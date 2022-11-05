@@ -31,8 +31,13 @@
                 }
                 ?>
                 <div class="col-lg-12">
-                <?php if(!empty($this->session->flashdata('pesan_kesalahan'))): ?>
-                    <p class="text-danger"><?= $this->session->flashdata('pesan_kesalahan'); ?></p>
+                <?php if(!empty($this->session->flashdata('pesan_kesalahan'))): ?> 
+                    <div class="col-md-10">
+                        <div class="alert alert-success">
+                            
+                            <p class="text-danger text-center me-3"><?= $this->session->flashdata('pesan_kesalahan'); ?></p>
+                        </div>
+                    </div>
                 <?php endif; ?>
                     <form action="" method="POST">
                         <div class="row mb-3">
@@ -51,7 +56,7 @@
                 </div>
                 <div class="link-registrasi mt-5 text-center">
                     <a href="<?= base_url(); ?>Auth/registrasi">Buat Akun</a><br>
-                    <a href="">Lupa Password</a>
+                    <a href="<?= base_url(); ?>Auth/lupa_password">Lupa Password</a>
                 </div>
             </div>
         </div>

@@ -63,8 +63,8 @@
                     </div>
                 <?php else : ?>
                     
-                    <i class="fa-regular fa-bell" style="font-size: 30px; padding-right:20px; cursor:pointer;" id="liveToastBtn"></i>
-                    <p class="text-success fw-bold text-notifikasi">1</p>
+                    <!-- <i class="fa-regular fa-bell" style="font-size: 30px; padding-right:20px; cursor:pointer;" id="liveToastBtn"></i> -->
+                    <!-- <p class="text-success fw-bold text-notifikasi">1</p> -->
                     <div class="dropdown dropdown-profil">
                         <a class="" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="d-flex card-profil">
@@ -77,6 +77,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<?= base_url(); ?>User_profil">Profil</a></li>
                             <li><a class="dropdown-item" href="<?= base_url(); ?>Pesanan">Pesanan Masuk</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url(); ?>Pesanan/transaksi_pesanan">Transkasi Pesanan</a></li>
                             <li><a class="dropdown-item" href="<?= base_url(); ?>Riwayat_transaksi">Riwayat Transaksi</a></li>
                             <li><a class="dropdown-item" href="<?= base_url(); ?>Posting_penjualan">Posting Penjualan</a></li>
                             <li><a class="dropdown-item" href="<?= base_url(); ?>Posting_pesanan">Posting Pesanan</a></li>

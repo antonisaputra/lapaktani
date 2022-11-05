@@ -5,6 +5,7 @@ class Posting_penjualan extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Postingan_penjualan_model');
+        is_user();
     }
     public function index(){
         $data['title'] = "Posting Penjualan";
@@ -52,6 +53,8 @@ class Posting_penjualan extends CI_Controller{
     }
 
     public function delete($id){
+        $penjualan = $this->db->get_where('penjualan',['id' => $id])->result_array();
+        unlink(FCPATH.'assets/upload/'.$penjualan['gambar']);
         $this->db->where('id', $id);
         $this->db->delete('penjualan');
         redirect('Posting_penjualan');

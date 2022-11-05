@@ -61,7 +61,7 @@
                                 <?=form_error('jenis_kelamin','<small class="text-danger ms-3">','</small>'); ?>
                             </div>
                             <div class="col-sm-10 mt-3">
-                                <input type="text" class="form-control" name="no_hp" placeholder="No.Handphone" value="<?= set_value('no_hp'); ?>">
+                                <input type="text" class="form-control" name="no_hp" placeholder="No.Handphone Harap Di Isi +62" value="<?= set_value('no_hp'); ?>">
                                 <?=form_error('no_hp','<small class="text-danger ms-3">','</small>'); ?>
                             </div>
                             <div class="col-sm-10 mt-3">

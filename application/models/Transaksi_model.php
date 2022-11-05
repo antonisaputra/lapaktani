@@ -6,6 +6,6 @@ class Transaksi_model extends CI_Model{
             $this->db->like('username', $keyword);
         }
         $this->db->order_by('id', 'DESC');
-        return $this->db->get('transaksi_user', $limit, $start)->result_array();
+        return $this->db->get('detail_transaksi', $limit, $start)->result_array();
     }
 }

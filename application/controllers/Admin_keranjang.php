@@ -5,6 +5,7 @@ class Admin_keranjang extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Keranjang_model');
+        is_admin();
     }
     public function index(){
         $data['title'] = "Admin Lapak Tani | Penjualan Produk";

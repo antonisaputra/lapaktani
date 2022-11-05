@@ -10,7 +10,7 @@ class Keranjang_model extends CI_Model{
             'catatan_pembelian' => $this->input->post('catatan_pembelian', true),
             'alamat' => queryUser('alamat'),
             'ongkir' => $kurir['ongkir'],
-            'metode_pembayaran' => $this->input->post('bank', true),
+            'id_pembayaran' => $this->input->post('bank', true),
             'no_rek' => $this->input->post('no_rek', true),
             'kurir' => $kurir['kurir'],
             'status' => "Belum Melakukan Pembayaran"
@@ -25,20 +25,11 @@ class Keranjang_model extends CI_Model{
         $noUrut = $transaksi['id'];
 
         foreach($keranjang as $k){
-            $data = ['id_transaksi' => $noUrut];
+            $data = ['id_transaksi' => $noUrut,'status_barang' => 'Menunggu Pembayaran'];
 
-            $this->updateProduk($k['id_produk'],$k['jumlah']);
             $this->db->where('id', $k['id']);
             $this->db->update('keranjang',$data);
         }
-    }
-
-    private function updateProduk($id, $jmlProduk){
-        $produk = $this->db->get_where('penjualan',['id' => $id])->row_array();
-        $updateProduk = $produk['stok'] - $jmlProduk;  
-
-        $this->db->where('id',$id);
-        $this->db->update('penjualan',['stok' => $updateProduk]);
     }
 
     public function editKeranjang($id){

@@ -10,6 +10,10 @@
                 <div class="card card-detail-belanja shadow">
                     <div class="card-body">
                         <h4><?= $pesanan['nama_produk'] ?></h4>
+                        <p>Harga: <?= 'Rp.', number_format($pesanan['harga_satuan'],2,',','.');?>/kg</p>
+                        <p>Alamat Pemesan : <?= $pesanan['alamat_pemesan']; ?></p>
+                        <p>Nama Pemesan : <?= $pesanan['nama_pemesan']; ?></p>
+                        <p>Waktu Upload : <?= date('d F Y h:i:s A', strtotime( $pesanan['waktu']));?></p>
                         <div class="detail-deskripsi">
                             <div class="body-detail pt-3">
                                 <?= $pesanan['detail']; ?>

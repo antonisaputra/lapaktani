@@ -5,6 +5,7 @@ class Admin_transaksi extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Transaksi_model');
+        is_admin();
     }
     public function index(){
         $data['title'] = "Admin Lapak Tani | Penjualan Produk";
@@ -41,7 +42,7 @@ class Admin_transaksi extends CI_Controller{
         $config['num_tag_close'] = '</div></li>';
 
         $this->db->like('username', $data['keyword']);
-        $this->db->from('transaksi_user');
+        $this->db->from('detail_transaksi');
         
         $config['total_rows'] = $this->db->count_all_results();
         $config['per_page'] = 20;
@@ -55,7 +56,9 @@ class Admin_transaksi extends CI_Controller{
 
     public function detail($id){
         $data['title'] = "Admin Detail Transaksi";
-        $data['transaksi'] = $this->db->get_where('transaksi_user',['id' => $id])->row_array();
+        $data['transaksi'] = $this->db->get_where('transaksi',['id' => $id])->row_array();
+        $data['user'] = $this->db->get_where('user',['id' => $data['transaksi']['id_costumer']])->row_array();
+        $data['pembayaran'] = $this->db->get_where('pembayaran',['id' => $data['transaksi']['id_pembayaran']])->row_array();
         $data['keranjang'] = $this->db->get_where('keranjang',['id_transaksi' => $id])->result_array();
         viewAdmin('Transaksi', 'detail', $data);
     }

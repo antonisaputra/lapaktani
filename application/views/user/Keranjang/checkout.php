@@ -33,30 +33,14 @@
                                     <?=form_error('catatan_pembelian','<small class="text-danger ms-3">','</small>'); ?>
                             </div>
                             <h5>Pilih Motode Pembayaran</h5>
+                            <?php foreach($pembayaran as $row): ?>
                             <div class="form-check mb-3">
-                                <input class="form-check-input" name="bank" type="checkbox" value="BRI" id="BRI">
+                                <input class="form-check-input" name="bank" type="checkbox" value="<?= $row['id']; ?>" id="BRI">
                                 <label class="form-check-label ts-1" for="BRI">
-                                    BRI
+                                    <?= $row['metode_pembayaran']; ?>
                                 </label>
                             </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" name="bank" type="checkbox" value="BRI" id="BNI">
-                                <label class="form-check-label ts-1" for="BNI">
-                                    BNI
-                                </label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" name="bank" type="checkbox" value="BRI" id="MANDIRI">
-                                <label class="form-check-label ts-1" for="MANDIRI">
-                                    MANDIRI
-                                </label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" value="BRI" name="bank" id="BCA">
-                                <label class="form-check-label ts-1" for="BCA">
-                                    BCA
-                                </label>
-                            </div>
+                            <?php endforeach; ?>
                             <?=form_error('bank','<small class="text-danger ms-3">','</small>'); ?>
                             <h5>Pilih Kurir</h5>
                             <?php foreach($kurir as $row): ?>

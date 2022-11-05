@@ -22,6 +22,16 @@ function viewAdmin($folder,$halaman, $data)
     $ci->load->view('admin/tamplates/footer', $data);
 }
 
+function viewKurir($folder,$halaman, $data)
+{
+    $ci = get_instance();
+
+    $ci->load->view('kurir/tamplates/sidebar', $data);
+    $ci->load->view('kurir/tamplates/header', $data);
+    $ci->load->view('kurir/'.$folder.'/'.$halaman, $data);
+    $ci->load->view('kurir/tamplates/footer', $data);
+}
+
 function viewUser($folder,$halaman, $data)
 {
     $ci = get_instance();
@@ -56,4 +66,28 @@ function queryTotalRiwayat($id, $ongkir){
     $total = $total + $ongkir;
 
     return number_format($total, 2, ",", ".");
+}
+
+function is_admin(){
+    $ci = get_instance();
+    $adminRole = $ci->session->userdata('role'); 
+    if($adminRole != "admin"){
+        redirect('Auth');
+    }
+}
+
+function is_kurir(){
+    $ci = get_instance();
+    $kurirRole = $ci->session->userdata('role'); 
+    if($kurirRole != "kurir" && $kurirRole != "admin"){
+        redirect('Auth');
+    }
+}
+
+function is_user(){
+    $ci = get_instance();
+    $userRole = $ci->session->userdata('role'); 
+    if($userRole != "user"){
+        redirect('Auth');
+    }
 }

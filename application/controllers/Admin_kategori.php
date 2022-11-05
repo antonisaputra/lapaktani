@@ -6,6 +6,7 @@ class Admin_kategori extends CI_Controller{
         parent:: __construct();
         $this->load->model('Kategori_model');
         $this->load->library('pagination');
+        is_admin();
     }
     
     public function index(){

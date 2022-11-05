@@ -6,6 +6,7 @@ class Admin_profil extends CI_Controller{
         parent::__construct();
 
         $this->load->model('Profil_model');
+        is_kurir();
     }
     public function index(){
         $data['title'] = "Admin Profil";

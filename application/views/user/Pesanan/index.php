@@ -39,15 +39,11 @@
                     <div class="col-lg-8">
                         <div class="card-body ps-5">
                             <h5 class="card-title"><?= $row['nama_produk'] ?></h5>
-                            <p class="card-text"><?= $row['detail']; ?></p>
+                            <p class="card-text"><?= word_limiter($row['detail'], 5); ?></p>
                             <div class="icon-pesanan">
                                 <div class="d-flex text-dark fs-6">
                                     <i class="fa-solid fa-fw fa-user icon-belanja"></i>
                                     <p><?= $row['nama_pemesan']; ?></p>
-                                </div>
-                                <div class="d-flex text-dark fs-6 flex-location">
-                                    <i class="fa-solid fa-fw fa-location-dot"></i>
-                                    <p><?= $row['alamat_pemesan']; ?></p>
                                 </div>
                             </div>
                             <a href="<?= base_url(); ?>User_pesanan/detail/<?= $row['id']; ?>" class="btn btn-lihat-detail">Lihat detail</a>

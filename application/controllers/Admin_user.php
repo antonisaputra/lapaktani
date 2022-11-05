@@ -5,6 +5,7 @@ class Admin_user extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('User_model');
+        is_admin();
     }
     public function index(){
         $data['title'] = "Admin Lapak Tani | User";
@@ -55,5 +56,31 @@ class Admin_user extends CI_Controller{
         $this->db->where('id',$id);
         $this->db->delete('user');
         redirect('Admin_user');
+    }
+
+    public function tambah_kurir(){
+        $data['title'] = "Registrasi Lapak Tani";
+
+        $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap','required|trim');
+        $this->form_validation->set_rules('email', 'Email','required|trim|valid_email|is_unique[user.email]',[
+            'is_unique'=> 'Email Sudah Terdaftar'
+        ]);
+        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir','required|trim');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jeni_Kelamin','required|trim');
+        $this->form_validation->set_rules('no_hp', 'Nomor Headphone','required|trim');
+        $this->form_validation->set_rules('alamat_lengkap', 'Alamat Lengkap','required|trim');
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[5]|matches[password2]', [
+            'matches' => 'Password Tidak Sesuai',
+            'min_length' => 'Password Terlalu Pendek Minimal 5 Karakter!'
+        ]);
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+
+        if($this->form_validation->run() == false){
+            viewAdmin('User','tambah', $data);
+        }else{
+            $this->User_model->tambahKurir();
+            $this->session->set_flashdata('pesan', 'Behasil Registrasi!');
+            redirect('Admin_user');
+        }
     }
 }

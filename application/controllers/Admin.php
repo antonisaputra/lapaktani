@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller{
     public function index(){
+        is_admin();
         $data['title'] = "Admin Lapak Tani | Dashboard";
         $num_penjualan = $this->db->get('penjualan')->num_rows();
         $num_pesanan = $this->db->get('pesanan')->num_rows();

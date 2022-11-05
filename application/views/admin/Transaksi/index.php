@@ -39,7 +39,7 @@
         <th class="border-gray-200">No Rekening</th>
         <th class="border-gray-200">Kurir</th>
         <th class="border-gray-200">Tanggal Transaksi</th>
-        <th class="border-gray-200">Status</th>
+        <th class="border-gray-200">No Rekening</th>
         <th class="border-gray-200">Aksi</th>
       </tr>
     </thead>
@@ -58,7 +58,7 @@
           <td><span class="fw-normal"><?= $row['no_rek']; ?></span></td>
           <td><span class="fw-normal"><?= $row['kurir']; ?></span></td>
           <td><span class="fw-normal"><?= $row['tanggal_transaksi']; ?></span></td>
-          <td><span class="fw-normal"><?= $row['status']; ?></span></td>
+          <td><span class="fw-normal"><?= $row['no_rek']; ?></span></td>
           <td>
             <div class="btn-group">
               <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

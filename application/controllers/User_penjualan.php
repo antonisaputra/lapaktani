@@ -6,6 +6,7 @@ class User_penjualan extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Penjualan_model');
+        is_user();
     }
     public function index(){
         $data['title'] = "Penjualan";
@@ -37,7 +38,8 @@ class User_penjualan extends CI_Controller{
                 'nama_produk' => $produk['nama_produk'],
                 'jumlah' => $this->input->post('jumlah', true),
                 'harga' => $produk['harga_satuan'],
-                'subtotal' => $this->input->post('jumlah', true)*$produk['harga_satuan']
+                'subtotal' => $this->input->post('jumlah', true)*$produk['harga_satuan'],
+                'status_barang' => 'Dalam Keranjang'
             ];
 
             $this->db->insert('keranjang',$data);

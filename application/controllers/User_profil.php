@@ -9,6 +9,7 @@ class User_profil extends CI_Controller
             redirect('User_penjualan');
         }
         $this->load->model('Profil_model');
+        is_user();
     }
     public function index()
     {
