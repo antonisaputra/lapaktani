@@ -70,7 +70,7 @@
 <script src="<?= base_url(); ?>assets/user/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/sweetalert2.all.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/cobajs1.js"></script>
+<script src="<?= base_url(); ?>assets/js/cobajs2.js"></script>
 <script src="<?= base_url(); ?>assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/ckeditor/ckeditor.js"></script>
 <script>

@@ -20,18 +20,6 @@
                                 <input class="form-control" name="alamat"  value="<?= queryUser('alamat'); ?>"
                                     id="alamat" aria-label="Disabled input example" disabled></input>
                             </div>
-                            <div class="mb-3">
-                                <label for="no_rek">Nomor Rekning</label>
-                                <input type="number" name="no_rek" id="nama" class="form-control"
-                                    aria-label="default input example" value="<?= queryUser('username'); ?>">
-                                    <?=form_error('no_rek','<small class="text-danger ms-3">','</small>'); ?>
-                            </div>
-                            <div class="mb-3">
-                                <label for="catatanpembelian" class="form-label">Catatan Pembelian</label>
-                                <textarea class="form-control" name="catatan_pembelian"
-                                    id="catatanpembelian" rows="3"></textarea>
-                                    <?=form_error('catatan_pembelian','<small class="text-danger ms-3">','</small>'); ?>
-                            </div>
                             <h5>Pilih Motode Pembayaran</h5>
                             <?php foreach($pembayaran as $row): ?>
                             <div class="form-check mb-3">
@@ -42,6 +30,12 @@
                             </div>
                             <?php endforeach; ?>
                             <?=form_error('bank','<small class="text-danger ms-3">','</small>'); ?>
+                            <div class="mb-3">
+                                <label for="no_rek">Nomor Rekning</label>
+                                <input type="number" name="no_rek" id="nama" class="form-control"
+                                    aria-label="default input example" value="<?= queryUser('username'); ?>">
+                                    <?=form_error('no_rek','<small class="text-danger ms-3">','</small>'); ?>
+                            </div>
                             <h5>Pilih Kurir</h5>
                             <?php foreach($kurir as $row): ?>
                             <div class="form-check mb-3 form-kurir">
@@ -67,8 +61,15 @@
                                 </label>
                             </div> -->
                         </div>
+
+                        <div class="mb-3">
+                                <label for="catatanpembelian" class="form-label">Catatan Pembelian</label>
+                                <textarea class="form-control" name="catatan_pembelian"
+                                    id="catatanpembelian" rows="3"></textarea>
+                                    <?=form_error('catatan_pembelian','<small class="text-danger ms-3">','</small>'); ?>
+                            </div>
                         <!-- <a href="profil.html" class="btn btn-danger">Kembali</a> -->
-                        <button type="submit" name="checkout" class="btn btn-success tombol-checkout">Checkout</button>
+                        <button type="submit" name="checkout" class="btn btn-success">Checkout</button>
                     </form>
                 </div>
             </div>

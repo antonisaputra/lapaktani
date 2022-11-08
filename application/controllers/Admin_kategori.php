@@ -44,6 +44,7 @@ class Admin_kategori extends CI_Controller{
         $config['num_tag_close'] = '</div></li>';
 
         $this->db->like('kategori', $data['keyword']);
+        $this->db->or_like('nama_produk', $data['keyword']);
         $this->db->from('kategori');
         
         $config['total_rows'] = $this->db->count_all_results();

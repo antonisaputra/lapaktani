@@ -226,6 +226,14 @@
                         <span class="sidebar-text">Barang Sampai</span>
                     </a>
                 </li>
+                <li class="nav-item  <?= active_menu('Admin_Laporan'); ?> ">
+                    <a href="<?= base_url(); ?>Admin_Laporan" class="nav-link">
+                        <span class="sidebar-icon">
+                        <i class="fa-solid fa-file-contract fs-5 ms-1 me-2"></i>
+                        </span>
+                        <span class="sidebar-text">Laporan</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>

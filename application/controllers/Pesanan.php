@@ -41,4 +41,20 @@ class Pesanan extends CI_Controller{
         $this->db->update('keranjang',['status_barang' => 'Proses']);
         redirect('Pesanan');
     }
+
+    public function detail_pesanan($id){
+        $data['title'] = "Detail Transaksi Pesanan";
+        $data['keranjang'] = $this->db->get_where('keranjang',['id' => $id])->row_array();
+        $idKeranjang = $data['keranjang']['id'];
+        $data['bukti_pembayaran'] = $this->db->get_where('bukti_pembayaran',['id_keranjang' => $idKeranjang])->row_array();
+        viewUser('Transaksi_pesanan','detail', $data);
+    }
+
+    public function detail_pesanan_masuk($id){
+        $data['title'] = "Detail Pesanan Masuk";
+        $data['keranjang'] = $this->db->get_where('keranjang',['id' => $id])->row_array();
+        $idKeranjang = $data['keranjang']['id'];
+        $data['bukti_pembayaran'] = $this->db->get_where('bukti_pembayaran',['id_keranjang' => $idKeranjang])->row_array();
+        viewUser('Pesanan Masuk','detail', $data);
+    }
 }

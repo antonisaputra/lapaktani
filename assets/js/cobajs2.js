@@ -48,3 +48,44 @@ if (flashData) {
     'success'
   )
 }
+
+$('.tombol-checkout').on('click', function (e) {
+  e.preventDefault();
+  const href = $(this).attr('href');
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success ms-3',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+  
+  swalWithBootstrapButtons.fire({
+    title: 'Apa Anda Yakin?',
+    text: "Barang Di Checkout!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Ya, Checkout Barang',
+    cancelButtonText: 'Tidak, Batal!',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      document.location.href = href;
+      swalWithBootstrapButtons.fire(
+        'Checkout!',
+        'Barang Berhasil Checkout.',
+        'success'
+      )
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        'Batal',
+        'Barang Batal Checkout:)',
+        'error'
+      )
+    }
+  })
+});
