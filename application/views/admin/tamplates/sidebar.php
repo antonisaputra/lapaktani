@@ -295,7 +295,7 @@
                 <li class="nav-item  <?= active_menu('Barang_terkirim'); ?> ">
                     <a href="<?= base_url(); ?>Barang_terkirim" class="nav-link">
                         <span class="sidebar-icon">
-                        <i class="fa-solid fa-fw fa-user fs-5"></i>
+                        <i class="fa-solid fa-truck-fast"></i>
                         </span>
                         <span class="sidebar-text">Barang Terkirim</span>
                     </a>

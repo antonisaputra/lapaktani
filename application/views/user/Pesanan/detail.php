@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <?php if($this->session->userdata('email')): ?>
-                        <a href="" class="btn btn-keranjang">Chat Pemesan</a>
+                        <a href="https://api.whatsapp.com/send?phone=<?= $user['no_hp']; ?>&text=Hi" class="btn btn-keranjang">Chat Pemesan</a>
                         <?php else: ?>
                         <p class="text-success"> Login Terlebih Dahulu Untuk Chat Pemesan</p>
                         <?php endif; ?>

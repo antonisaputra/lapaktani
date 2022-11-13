@@ -60,7 +60,7 @@
 </head>
 
 <body>
-    <h2> <span style="color: #0AC489;"> Lapak Tani </span>: Daftar Produk Penjualan</h2>
+    <h2> <span style="color: #0AC489;"> Lapak Tani </span>: Laporan Penjualan</h2>
     <div>Date: <?= date('d M Y  H:i:s'); ?></div>
     <br>
     <table class="items" width="100%" style="font-size: 9pt; border-collapse: collapse; " cellpadding="8">

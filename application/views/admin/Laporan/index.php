@@ -46,7 +46,7 @@
             <?php if (isset($button)) : ?>
                 <?php if (!empty($transaksi)) : ?>
                     <div class="col-md-3">
-                        <a href="" class="btn btn-success">Print</a>
+                        <a href="<?= base_url(); ?>Admin_Laporan/print/<?= $mulai; ?>/<?= $selesai; ?>" class="btn btn-secondary" target="_blank">Export Pdf</a>
                     </div>
                     <?php $no = 1; ?> 
                     <?php foreach ($transaksi as $row) : ?>

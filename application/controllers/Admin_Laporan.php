@@ -15,6 +15,8 @@ class Admin_laporan extends CI_Controller{
         if (isset($data['button'])) {
             $mulai = $this->input->post('mulai');
             $selesai = $this->input->post('selesai');
+            $data['mulai'] = $this->input->post('mulai');
+            $data['selesai'] = $this->input->post('selesai');
             // $mulai1 =  date("d M Y h:i:s", strtotime($mulai));
             // $selesai1 =  date("d M Y h:i:s", strtotime($selesai));
             $data['transaksi'] = $this->Laporan_model->getLaporan($mulai, $selesai);
@@ -55,4 +57,15 @@ class Admin_laporan extends CI_Controller{
         // $data['transaksi'] = $this->Laporan_model->getLaporan($config['per_page'], $data['start'], $data['keyword']);
         viewAdmin('Laporan','index',$data);
     }
+
+    public function print($mulai, $selesai){
+        $data['title'] = "Laporan Penjualan";
+        $date = date('d F Y h:i:s A');
+        $mpdf = new \Mpdf\Mpdf();
+        $data['transaksi'] = $this->Laporan_model->getLaporan($mulai, $selesai);
+        $pdfView = $this->load->view('Admin/Laporan/print',$data, TRUE);
+        $mpdf->WriteHTML($pdfView);
+        $mpdf->Output('Laporan'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
+    }
+
 }

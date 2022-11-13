@@ -44,7 +44,6 @@ class Admin_kategori extends CI_Controller{
         $config['num_tag_close'] = '</div></li>';
 
         $this->db->like('kategori', $data['keyword']);
-        $this->db->or_like('nama_produk', $data['keyword']);
         $this->db->from('kategori');
         
         $config['total_rows'] = $this->db->count_all_results();
@@ -77,7 +76,7 @@ class Admin_kategori extends CI_Controller{
         $data['title'] = "Admin Lapak Tani | Tambah Kategori";
         $data['kategori'] = $this->Kategori_model->getKategoriById($id);
 
-        $this->form_validation->set_rules('kategori','Kategori Produk','required|trim',array(
+        $this->form_validation->set_rules('kategori','Kategori Produk','required|trim|is_unique[kategori.kategori]',array(
             'required' => 'Kategori wajib di isi !'
         ));
 
@@ -96,13 +95,13 @@ class Admin_kategori extends CI_Controller{
         redirect('Admin_kategori');
     }
 
-    // public function pdf(){
-    //     $data['title'] = "Data Kategori";
-    //     $date = date('d M Y H:i:s');
-    //     $mpdf = new \Mpdf\Mpdf();
-    //     $data['kategori']= $this->Kategori_model->getAllKategori();
-    //     $pdfView = $this->load->view('Admin/Kategori/pdf',$data, TRUE);
-    //     $mpdf->WriteHTML($pdfView);
-    //     $mpdf->Output('Daftar Kategori'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
-    // }
+    public function pdf(){
+        $data['title'] = "Data Kategori";
+        $date = date('d M Y H:i:s');
+        $mpdf = new \Mpdf\Mpdf();
+        $data['kategori']= $this->Kategori_model->getAllKategori();
+        $pdfView = $this->load->view('Admin/Kategori/pdf',$data, TRUE);
+        $mpdf->WriteHTML($pdfView);
+        $mpdf->Output('Daftar Kategori'.$date.'.pdf',\Mpdf\Output\Destination::INLINE);
+    }
 }

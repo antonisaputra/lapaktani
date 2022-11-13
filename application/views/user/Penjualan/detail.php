@@ -1,4 +1,8 @@
-
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
+                <?php if ($this->session->flashdata('pesan')) {
+                    $this->session->flashdata('pesan');
+                }
+                ?>
     <div class="container container-detail-belanja">
         <div class="row">
             <div class="col-lg-4">
